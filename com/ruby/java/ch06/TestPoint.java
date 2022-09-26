@@ -20,7 +20,7 @@ class ColorPoint extends Point {
 		this.color = s;
 	}	
 	public void getColorPoint () {
-		System.out.println ("color = " + color);		
+		System.out.println ("color = " + color);	
 	}		
 }
 
@@ -28,7 +28,6 @@ class ColorPoint extends Point {
 public class TestPoint {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		Point p = new Point();
 		ColorPoint cp = new ColorPoint();
@@ -36,8 +35,7 @@ public class TestPoint {
 		cp.setColorPoint(10, 20, "red");
 		p.getTestPoint();
 		cp.getColorPoint();
-		
+
 	}
 
 }
-
