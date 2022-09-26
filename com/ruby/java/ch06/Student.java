@@ -8,10 +8,10 @@ class classstudent {
 	private double height;
 //	↑필드
 	public void getStudent(String n, int a, double h) {
-		name = n;
-		age = a;
-		height = h;	
-//	↑생성자
+		this.name = n;
+		this.age = a;
+		this.height = h;	
+//	↑생성자?객체?
 	}
 //⑤-① 출력
 	public void showStudent() {

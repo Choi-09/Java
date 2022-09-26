@@ -25,3 +25,4 @@ public class StaticMethodTest {
 		System.out.println("java");
 	}
 }
+ 
