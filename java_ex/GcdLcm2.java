@@ -1,26 +1,32 @@
+//방법2) private - getter, setter
+
 package java_ex;
 
 import java.util.Scanner;
 
-public class GcdLcm {	
-/*④*/int num1;
-/*④*/int num2;
-	
-/*①*/public static void main(String[] args) { 
-/*ctrl + shift + o*/
-		Scanner sc = new Scanner(System.in);
-		
-/*③*/	System.out.print("a: ");
-/*②*/	int a = sc.nextInt();
-/*③*/	System.out.print("b: ");
-/*②*/	int b = sc.nextInt();
-		
-/*⑤*/	GcdLcm gl = new GcdLcm();
-		gl.num1 = a;
-		gl.num2 = b;
-/*⑥*/	gl.print();
 
-	}
+public class GcdLcm2 {	
+	private int num1;
+	private int num2;
+
+//방법2
+//	public GcdLcm2() {
+//		// TODO Auto-generated constructor stub
+//	}
+	
+//	public void setNum1(int num1) {
+//		this.num1 = num1;
+//	}
+//	
+//	public void setNum2(int num2) {
+//		this.num2 = num2;
+//	}
+	
+//방법3	
+	public GcdLcm2(int num1, int num2) {
+		this.num1 = num1;
+		this.num2 = num2;
+		}	
 
 	public void print() {
 //		유클리스 호제법 최소공배수와 최대공약수를 구한다.\
