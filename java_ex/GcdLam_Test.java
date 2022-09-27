@@ -21,3 +21,6 @@ public class GcdLam_Test {
 	}
 
 }
+
+
+// private - getter, setter로 바꾸면 외부에서 데이터를 볼 수 없다.
