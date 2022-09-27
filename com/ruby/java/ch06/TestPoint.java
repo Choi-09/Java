@@ -1,41 +1,32 @@
 package com.ruby.java.ch06;
 
 class Point {
-	private int x,y;
+	int x,y;
 	
-	public void setPoint(int x, int y) {
-		this.x = x;
-		this.y = y;
-	}	
-	public void getTestPoint() {
-		System.out.println("x = " + x + "\n" + "y = " + y) ;
-	}	
-}
-
-
-class ColorPoint extends Point {
-	private String color;
-	
-	public void setColorPoint (int x , int y, String s) {
-		this.color = s;
-	}	
-	public void getColorPoint () {
-		System.out.println ("color = " + color);	
+	public Point(int x, int y) {
+		this.x = x; this.y = y;
+		System.out.println("Point()::");
 	}		
-}
+	public void showTestPoint() {
+		System.out.println();
+	}	
+	}
+	
 
 
-public class TestPoint {
+public class TestPoint extends Point {
+	private String color;
+	public TestPoint(int x , int y, String s) {
+		super(x, y);	
+		System.out.println ("TestPoint()::");	
+		color = s;
+	}		
+
 
 	public static void main(String[] args) {
 		
-		Point p = new Point();
-		ColorPoint cp = new ColorPoint();
-		p.setPoint(10, 20);
-		cp.setColorPoint(10, 20, "red");
-		p.getTestPoint();
-		cp.getColorPoint();
-
+//		Point p = new Point(10, 20);
+		TestPoint tp = new TestPoint(10, 20, "red");
+		tp.showTestPoint();
 	}
-
 }
