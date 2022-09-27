@@ -28,7 +28,7 @@ public class GcdLcm2 {
 		}	
 
 	public void print() {
-//		유클리스 호제법 최소공배수와 최대공약수를 구한다.\
+//		유클리드 호제법 최소공배수와 최대공약수를 구한다.\
 //		num1 : a, num2 : b
 		int max;
 		int min;
