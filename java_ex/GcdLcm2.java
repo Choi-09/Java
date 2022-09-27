@@ -1,4 +1,4 @@
-//방법2) private - getter, setter
+//방법2,3) private - getter, setter
 
 package java_ex;
 
