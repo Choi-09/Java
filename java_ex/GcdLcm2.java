@@ -1,5 +1,4 @@
 //방법2,3) private - getter, setter
-
 package java_ex;
 
 import java.util.Scanner;
