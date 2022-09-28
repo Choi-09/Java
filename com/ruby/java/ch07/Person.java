@@ -5,7 +5,7 @@ class ProcessPerson {
 	private String pname;
 	private int age;
 	public ProcessPerson() {
-		System.out.println("defaul 생성자");
+//		System.out.println("defaul 생성자");
 		pno = null;
 		pname = null;
 		age = 0;
@@ -23,24 +23,6 @@ class ProcessPerson {
 		age = a;
 	}
 	
-//	public String getPno() {
-//		return pno;
-//	}
-//	public void setPno(String pn) {
-//		this.pno = pn;
-//	}
-//	public String getPname() {
-//		return pname;
-//	}
-//	public void setPname(String name) {
-//		this.pname = name;
-//	}
-//	public int getAge() {
-//		return age;
-//	}
-//	public void setAge(int a) {
-//		this.age = a;
-//	}
 	public void show() {
 		System.out.println("주민번호 = " + pno + " / " + "이름 = " + pname + " / "+ "나이 = " + age);
 	}
@@ -81,24 +63,44 @@ class WorkStudent extends Student {
 		this.salary = pay;
 	}
 	
+//	↓ 오류확인! <완료>
 	public void show() {
 		super.show();
-		System.out.println("직업 = " + job + " / " + "급여 = " + salary);
+		System.out.println("직업 = " + job + " / " +"급여 = " + salary);
+	}
+	public String toString() {
+		return super.toString() + "직업 = " + job + "급여 = " + salary;
+	}
+//	무조건 객체가 있어야 show 가능
+	public void show(int a) {
+		super.show();
+		System.out.println(toString());
 	}
 }
 
 public class Person {
+	static void display(ProcessPerson[] pp) {
+		for (int i = 0; i < 6 ; i++)
+			pp[i].show();
+	}
 
 	public static void main(String[] args) {
+		ProcessPerson list[] = new ProcessPerson[10];
 		ProcessPerson pp = new ProcessPerson();
 		ProcessPerson pp1 = new ProcessPerson("p001", "Kim", 23);
-		ProcessPerson pp2 = new ProcessPerson("p001", "Hong", 30);		
+		ProcessPerson pp2 = new ProcessPerson("p002", "Hong", 30);		
 		ProcessPerson pp3 = new ProcessPerson("p003", "Lee", 20);		
-		WorkStudent ws = new WorkStudent("p001", "Hong", 30, "부산대", 3, "학생", 1000);	
-		Student s = new Student("p004", "Lee", 20, "신라대", 3);
-		pp1.show();
-		ws.show();
-		s.show();
+		WorkStudent ws = new WorkStudent("p001", "Kim", 23, "부산대", 3, "학생", 10000);	
+		Student s = new Student("p003", "Lee", 20, "신라대", 1);
+		
+		list[0] = pp; list[1] = pp1; list[2] = pp2; list[3] = pp3; list[4] = ws; list[5] = s;
+		display(list);
+//		↑아래처럼 반복되는 코드를 리스트로 정리할 수 있다. upcasting.
+//		pp1.show();
+//		pp2.show();
+//		pp3.show();
+//		ws.show();
+//		s.show();
 	}	
 	
 }
