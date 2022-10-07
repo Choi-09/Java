@@ -11,40 +11,55 @@ abstract class Person {
 		this.age = a;
 	}
 
-	abstract void show();
-	abstract void increase();
+	public abstract void show();	
+	public String toString() {
+		return " 번호 : " + pnum + "이름 : " + name + "나이 :" + age;
+	}
 }
 
-class Employee extends Person {
+abstract class Employee extends Person {
 	private String job;
 	private String dept;
-	private int salary;
-	public Employee(String pn, String name, int a, String ej, String d, int sal) {
+	private double salary;
+	public Employee(String pn, String name, int a, String ej, String d, double sal) {
 		super(pn, name, a);
 		job = ej;
 		dept = d;
 		salary = sal;
 	}
-		public void show() {
-			System.out.printf("");
-		}	
-		public void increase() {
-			System.out.println("");
-		}
+		
+	public void increase(int j, double sal) {		
+	}
 
+	public void show() {
+		System.out.println(toString());
+	}
+	
+	public String toString() {
+		return super.toString() + " 직장 : " + job + "부서 : " + dept + "월급 :" + salary;
+	}	
 }
 
 class Designer extends Employee {
 	private String language;
 	private int workYear;
-	public Designer(String pn, String name, int a, String dj, String d, int sal, String l, int wy) {
+	public Designer(String pn, String name, int a, String dj, String d, double sal, String l, int wy) {
 		super(pn, name, a, dj, d, sal);
 		language = l;
 		workYear = wy;
 	}
+	
+	public void show() {
+		System.out.println(toString());
+	}
+	
+	public String toString() {
+		return super.toString() + "언어 : " + language + "근무년차 : + " + workYear;
+	}
 }
 
-class Student extends Person {
+
+abstract class Student extends Person {
 	private String schoolName;
 	private int schoolYear;
 	private int scholarship;
@@ -55,13 +70,12 @@ class Student extends Person {
 		scholarship = ss;
 	}
 
-	@Override
-	public void increase() {
-		// TODO Auto-generated method stub	
-	}
-	@Override
 	public void show() {
-		// TODO Auto-generated method stub
+		System.out.println(toString());
+	}
+	
+	public String toString() {
+		return super.toString() + " 학교명 : " + schoolName + "학년 : " + schoolYear + "장학금 :" + scholarship;
 	}
 }
 
@@ -73,38 +87,46 @@ class WorkStudent extends Student {
 		Job = sj;
 		dayPay = dp;
 	}
+
+	public void show() {
+		System.out.println(toString());
+	}
+	
+	public String toString() {
+		return super.toString() + "직업 : " + Job + "일급 : " + dayPay;
+	}
 }
 
 
-
-
-
 public class TestPersons {
+	
 	static void showAll(Person[] p) {
 		for (int i = 0; i < 4; i++)
-			p[i].show();
+			p[i].show();		
 	}
-	static void increaseAll(Person[] p) {
-		for(int i = 0; i < 4;  )
-			p[i].show();
-	}
+	
+//	static void increaseAll(Person[] p,int j, double sal, int workYear) {
+//		for(j = 1; j >=workYear; j++) {
+//			sal = sal + sal*0.1*j;
+//			p[j].increase();
+//		}		
+
 
 	static void getData(Person[]p) {
-		Employee e = new Employee("p01", "Hong", 32, "DB", "Design", 20000);
+//		Employee e = ("p01", "Hong", 32, "DB", "Design", 20000);
 		Designer d = new Designer("p01", "Hong", 32, "DB", "Design", 20000, "Korean", 5);
-		Student s = new Student("p02", "Park", 21, "부산대", 2, 5000);
+//		Student s = new Student("p02", "Park", 21, "부산대", 2, 5000);
 		WorkStudent ws = new WorkStudent("p02", "Park", 21, "부산대", 2, 5000, "CR", 1500 );
-		p[0] = e;
+//		p[0] = e;
 		p[1] = d;
-		p[2] = s;
+//		p[2] = s;
 		p[3] = ws;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args, Person[][] p) {
 		Person[]setPerson = new Person[4];
 		getData(setPerson);
-        showAll(setPerson);
-        increaseAll(setPerson);
-        showAll(setPerson);
+		d.show();
+//        increaseAll(setPerson);
 	}
 }
