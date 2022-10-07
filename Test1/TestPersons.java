@@ -126,7 +126,7 @@ public class TestPersons {
 	public static void main(String[] args, Person[][] p) {
 		Person[]setPerson = new Person[4];
 		getData(setPerson);
-		d.show();
+//		d.show();/
 //        increaseAll(setPerson);
 	}
 }
