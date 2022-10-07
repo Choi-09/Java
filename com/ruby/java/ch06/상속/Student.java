@@ -1,4 +1,4 @@
-package com.ruby.java.ch06;
+package com.ruby.java.ch06.상속;
 
 public class Student extends Person {
 	private String major;

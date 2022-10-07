@@ -4,6 +4,7 @@ class ProcessPerson {
 	private String pno;
 	private String pname;
 	private int age;
+	
 	public ProcessPerson() {
 //		System.out.println("defaul 생성자");
 		pno = null;
@@ -65,17 +66,17 @@ class WorkStudent extends Student {
 	
 //	↓ 오류확인! <완료>
 	public void show() {
-		super.show();
-		System.out.println("직업 = " + job + " / " +"급여 = " + salary);
+//		super.show();
+		System.out.print("직업 = " + job + " / " +"급여 = " + salary);
 	}
 	public String toString() {
 		return super.toString() + "직업 = " + job + "급여 = " + salary;
 	}
 //	무조건 객체가 있어야 show 가능
-	public void show(int a) {
-		super.show();
-		System.out.println(toString());
-	}
+//	public void show(int a) {
+//		super.show();
+//		System.out.println(toString());
+//	}
 }
 
 public class Person {

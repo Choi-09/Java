@@ -15,7 +15,7 @@ public class StaticMethodTest {
 	}
 	
 	public static void print1() {
-		int num2 = num;
+//		int num2 = num;
 		//static은 객체가 만들어지기 전에 한 번 실행되기 때문에 해당부분에서는 num변수를 읽을 수 없다.
 		System.out.println("hello");
 	}
