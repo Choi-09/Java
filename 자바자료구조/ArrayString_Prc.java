@@ -77,10 +77,5 @@ public class ArrayString_Prc {
 				return;
 				}
 			}
-
-		
-		
-
-	
 	}
 }
